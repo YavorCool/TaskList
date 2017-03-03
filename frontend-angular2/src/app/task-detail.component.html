@@ -1,0 +1,8 @@
+<div *ngIf="task">
+  <div>
+    <textarea [(ngModel)]="task.text" placeholder="name"></textarea>
+  </div>
+  <button class="btn btn-default" (click)="goBack()">Назад</button>
+  <button class="btn btn-default" (click)="save()">Сохранить</button>
+</div>
+

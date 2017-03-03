@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <label>Новая задача:</label><br> <textarea #taskText></textarea><br>
+  <button class="btn btn-default" (click)="add(taskText.value); taskText.value=''">
+      Добавить</button>
+</div>
+<div class="col-md-12">
+  <ul class="tasks list-group">
+    <li class="list-group-item" *ngFor="let task of tasks"
+        [class.selected]="task === selectedTask"
+        [routerLink]="['/tasks/', task.id]"><p>
+      {{task.text}}</p><button class="delete btn btn-default"
+      (click)="delete(task); $event.stopPropagation()">Удалить</button>
+    </li></ul>
+</div>
+
